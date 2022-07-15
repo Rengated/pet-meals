@@ -5,8 +5,8 @@ export const routes = [
         name: 'Menu' 
     },
     {
-        path: 'about',
+        path: '/about',
         name: 'About'
     }
-    
+
 ]

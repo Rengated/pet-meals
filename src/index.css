@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  grid-auto-rows: 1fr;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -8,7 +9,7 @@ body {
 }
 
 
-*, *:active, *:hover{
+*{
   margin: 0;
   padding: 0;
   text-decoration: none ;
@@ -16,4 +17,17 @@ body {
 
 }
 
- 
+.cart{
+  margin-right: 10px;
+}
+
+
+
+
+
+.layout{
+  padding-top: 30px;
+  background-color: rgb(246, 246, 246);
+  border-top: 1px solid black;
+}
+

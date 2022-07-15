@@ -1,0 +1,25 @@
+.link{
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    font-size: 20px;
+
+}
+
+.link:hover{
+    color: hotpink;
+}
+
+.active{
+    color: hotpink;
+    border-bottom: 1px solid rgb(195, 195, 195);
+
+}
+
+.navbar{
+    height: 60px;
+    display: flex;
+    align-items: center;
+ 
+
+}

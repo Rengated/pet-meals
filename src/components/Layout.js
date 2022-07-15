@@ -3,8 +3,10 @@ import { Navbar } from "./Navbar"
  export const Layot = ({children}) => {
     return(
         <>
-        <Navbar/>
-        {children}
+            <div className="container"><Navbar/></div>
+            <div className="layout">
+               <div className="container"> {children} </div>
+            </div>      
         </>
     )
 
