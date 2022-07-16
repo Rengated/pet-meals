@@ -18,13 +18,22 @@ body {
 }
 
 .cart{
+  margin-top: 2px;
   margin-right: 10px;
 }
 
 
+.cart:hover{
+  color: hotpink;
+  cursor: pointer;
+}
 
-
-
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .layout{
   padding-top: 30px;
   background-color: rgb(246, 246, 246);

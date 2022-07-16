@@ -1,12 +1,20 @@
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
-import styles from '../styles/card.module.css'
+import styles from '../../styles/card.module.css'
 
 
 export const Card = (props) => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    const handleImgCLick = () => {
-        navigate('/meal', {state : {mealId: props.id}})
 
+    const handleImgCLick = () => {
+        navigate('/meal', {state : {mealId: props.id}});
+
+    }
+
+    const hadnleAddMeal = () => {
+        dispatch({type: 'ADD_TO_CART', payload: props.id});
+        localStorage.setItem(props.id, 'MealId');
     }
     return(
         <div className={styles.card}>
@@ -14,7 +22,7 @@ export const Card = (props) => {
             <div className={styles.information}>
                 <p className={styles.title}>{props.title}</p>
                 <p className={styles.area}>{props.area}</p>
-                <button className={styles.button}>
+                <button onClick={hadnleAddMeal} className={styles.button}>
                     <i className="cart fa-solid fa-cart-shopping"></i>
                     <span>Add meal</span>
                 </button>
