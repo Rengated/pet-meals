@@ -1,0 +1,47 @@
+.img{
+    width: 400px;
+    height: 400px;
+}
+
+.information{
+    padding-left: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.mealCard{
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    padding: 50px 30px;
+}
+
+.tag{
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 10px;
+    background-color: rgb(239, 235, 235);
+
+}
+
+.tags{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.instructions{
+    font-size: 15px;
+    opacity: 0.7;
+    width: 600px;
+   
+}

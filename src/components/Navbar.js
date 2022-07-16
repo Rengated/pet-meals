@@ -1,4 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+ 
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import {routes} from '../helpers/routes'
 import styles from '../styles/navbar.module.css'
 
@@ -6,7 +8,8 @@ import styles from '../styles/navbar.module.css'
 
 export const Navbar = () => {
     const location = useLocation();
- 
+    
+
 
     const isActiveLink = (path) => {
         if (path === location.pathname){
@@ -27,8 +30,11 @@ export const Navbar = () => {
    
 
     return(
-        <nav className={styles.navbar}>
-            {renderRoutes()}
-        </nav>
+        <header>
+            <nav className={styles.navbar}>
+                {renderRoutes()}
+            </nav>
+            <i className="cart fa-solid fa-cart-shopping">({localStorage.length})</i>
+        </header>
     )
 }
