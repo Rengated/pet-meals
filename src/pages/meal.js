@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react"
-import { useLocation, useSearchParams } from "react-router-dom"
-import { MealCard } from "../Card/MealCard"
+import { useEffect,  useState } from "react"
+import { useLocation,  } from "react-router-dom"
+import { MealCard } from "../components/Card/MealCard"
 import { getMealById } from "../http/mealsService"
 import styles from '../styles/meal.module.css'
 
@@ -9,7 +9,7 @@ export const Meal = () => {
     const location = useLocation();
     const [mealData, setMealData] = useState('');
     
-    console.log(mealData)
+  
     useEffect(() => {
         const fetch = async() => {
             const response = await getMealById(location.state.mealId);
@@ -17,11 +17,12 @@ export const Meal = () => {
             document.title = response.meals[0].strMeal;
         }
         fetch()      
-    }, [])
+    }, )
 
     return(
         <div className={styles.meal}>
             <MealCard 
+            id={location.state.mealId}
             title={mealData.strMeal}
             area={mealData.strArea}
             category={mealData.strCategory}

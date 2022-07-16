@@ -18,12 +18,14 @@ body {
 }
 
 .cart{
+  margin-top: 2px;
   margin-right: 10px;
 }
 
 
 .cart:hover{
   color: hotpink;
+  cursor: pointer;
 }
 
 header{

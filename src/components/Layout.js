@@ -4,8 +4,8 @@ import { Navbar } from "./Navbar"
     return(
         <>
             <div className="container"><Navbar/></div>
-            <div className="layout">
-               <div className="container"> {children} </div>
+                <div className="layout">
+                <div className="container"> {children} </div>
             </div>      
         </>
     )
