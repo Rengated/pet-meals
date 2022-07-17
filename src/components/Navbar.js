@@ -1,5 +1,5 @@
 import { useSelector} from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {routes} from '../helpers/routes'
 import styles from '../styles/navbar.module.css'
 
@@ -7,8 +7,8 @@ import styles from '../styles/navbar.module.css'
 
 export const Navbar = () => {
     const location = useLocation();
-
-    const items = useSelector(state => state.ids).length ;
+    const navigate = useNavigate();
+    const items = useSelector(state => state.ids).length;
    
     const isActiveLink = (path) => {
         if (path === location.pathname){
@@ -33,7 +33,7 @@ export const Navbar = () => {
             <nav className={styles.navbar}>
                 {renderRoutes()}
             </nav>
-            <i className="cart fa-solid fa-cart-shopping">({items})</i>
+            <i onClick={() => navigate('cart')} className="cart fa-solid fa-cart-shopping">({items})</i>
         </header>
     )
 }

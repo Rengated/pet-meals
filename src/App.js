@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Layot } from "./components/Layout";
 import { Menu } from "./pages/menu";
+import {Cart} from './pages/cart'
 import {About} from './pages/about'
 import { Meal } from "./pages/meal";
 import { Provider } from "react-redux";
@@ -14,8 +15,9 @@ function App() {
       <Layot>
         <Routes>
             <Route path="/" element={<Menu />}/>
-            <Route path='about' element={<About/>}/>
+            <Route path='/about' element={<About/>}/>
             <Route path='/meal' element={<Meal/>}/>
+            <Route path='/cart' element={<Cart/>}/> 
         </Routes>
       </Layot>
     </Provider>

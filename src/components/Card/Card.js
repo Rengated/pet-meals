@@ -13,8 +13,17 @@ export const Card = (props) => {
     }
 
     const hadnleAddMeal = () => {
-        dispatch({type: 'ADD_TO_CART', payload: props.id});
-        localStorage.setItem(props.id, 'MealId');
+        if(!Object.keys(localStorage).includes(props.id)){
+            dispatch({type: 'ADD_TO_CART', payload: props.id});
+            localStorage.setItem(props.id, 'MealId')
+        }
+    }
+
+    const handleDeleteMeal = () => {
+        dispatch({type: 'DELETE_FROM_CART', payload: props.id})
+        localStorage.removeItem(props.id)
+        props.refreshCart()
+
     }
     return(
         <div className={styles.card}>
@@ -22,9 +31,9 @@ export const Card = (props) => {
             <div className={styles.information}>
                 <p className={styles.title}>{props.title}</p>
                 <p className={styles.area}>{props.area}</p>
-                <button onClick={hadnleAddMeal} className={styles.button}>
+                <button onClick={!props.isInCart? hadnleAddMeal: handleDeleteMeal} className={styles.button}>
                     <i className="cart fa-solid fa-cart-shopping"></i>
-                    <span>Add meal</span>
+                    <span>{!props.isInCart? 'Add meal' : 'Delete meal'}</span>
                 </button>
             </div>
         </div>

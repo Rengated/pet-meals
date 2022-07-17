@@ -1,5 +1,6 @@
 import { useEffect, useState} from "react"
 import { Card } from "../components/Card/Card"
+import { MenuNav } from "../components/MenuNav"
 import { getRandomMeal } from "../http/mealsService"
 import styles from '../styles/menu.module.css'
 
@@ -18,9 +19,11 @@ export const Menu = () => {
     }, [])
     return(
         <>
-            <div className={styles.meals}>
+        <MenuNav/>
+            <div className={`${styles.meals} container`}>
                 {
-                    meals? meals.map(meal => <Card 
+                    meals? meals.map(meal => <Card
+                                                isInCart={false}
                                                 id={meal.meals[0].idMeal}
                                                 key={meal.meals[0].idMeal}
                                                 src={meal.meals[0].strMealThumb}

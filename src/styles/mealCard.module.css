@@ -12,11 +12,19 @@
 .title{
     font-size: 40px;
     font-weight: bold;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.title>span{
+    max-width: 550px;
 }
 
 .mealCard{
-    height: 600px;
+   
     display: flex;
+    height: fit-content;
     flex-direction: row;
     background: white;
     padding: 50px 30px;
@@ -43,5 +51,4 @@
     font-size: 15px;
     opacity: 0.7;
     width: 600px;
-   
 }

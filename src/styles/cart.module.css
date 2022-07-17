@@ -1,0 +1,15 @@
+.cart{
+    padding-top: 30px;
+    min-height: 80vh;
+}
+
+.card_wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.index{
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
