@@ -16,3 +16,12 @@ export const getMealById = async(id) => {
     return await response.json()
 
 }
+
+ export const getMealsByArea = async(area) => {
+     const response = await fetch(`www.themealdb.com/api/json/v1/1/filter.php?a=${area}`, 
+     {
+         method: 'GET'
+     }
+     )
+     return await response.json()
+ }

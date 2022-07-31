@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { useSelector } from "react-redux"
 import { getMealById } from "../http/mealsService"
 import { Card } from "../components/Card/Card"
 import styles from '../styles/cart.module.css'

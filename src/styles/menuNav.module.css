@@ -15,11 +15,7 @@
     font-size: 17px;
 }
 
-.navItem:hover{
-    color: hotpink;
+.navItem:hover, .active{
+    color: rgb(219, 130, 174);
 }
-.active{
-    color: hotpink;
-    border-bottom: 1px solid rgb(195, 195, 195);
-
-}
+ 
