@@ -17,23 +17,37 @@ export const Menu = () => {
         }
 
     }, [])
+
+    const showMore = () => {
+        const fetch = async() => {
+            const meal = await getRandomMeal()
+            setMeals(prev => [...prev, meal])
+        }
+        for (let i = 0; i < 12; i ++){
+            fetch()
+        }
+    }
+
+
+
     return(
-        <>
-        <MenuNav/>
-            <div className={`${styles.meals} container`}>
-                {
-                    meals? meals.map(meal => <Card
-                                                isInCart={false}
-                                                id={meal.meals[0].idMeal}
-                                                key={meal.meals[0].idMeal}
-                                                src={meal.meals[0].strMealThumb}
-                                                area={meal.meals[0].strArea}
-                                                title={meal.meals[0].strMeal}
-                                            />
-                                  ) 
-                    : ''
-                }
-            </div>
-        </>
+        <div className={styles.wrapper}>
+            <MenuNav/>
+                <div className={`${styles.meals} container`}>
+                    {
+                        meals? meals.map(meal => <Card
+                                                    isInCart={false}
+                                                    id={meal.meals[0].idMeal}
+                                                    key={meal.meals[0].idMeal}
+                                                    src={meal.meals[0].strMealThumb}
+                                                    area={meal.meals[0].strArea}
+                                                    title={meal.meals[0].strMeal}
+                                                />
+                                    ) 
+                        : ''
+                    }
+                </div>
+                <button onClick={showMore} className={styles.button}>Show more</button>
+        </div>
     )
 }
