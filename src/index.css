@@ -8,13 +8,14 @@ body {
 }
 
 
-*{
+p, ul, li, a{
   margin: 0;
   padding: 0;
   text-decoration: none ;
   list-style: none;
 
 }
+
 
 .cart{
   margin-top: 2px;
